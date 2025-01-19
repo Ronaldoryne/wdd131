@@ -37,11 +37,6 @@ main {
     padding: 2em;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
 
 figure {
     display: flex;
