@@ -1,20 +1,10 @@
-temples.js
+// Get the current date and time
+const currentDate = new Date();
 
-// Get the current year
-const year = new Date().getFullYear();
+// Format the date and time
+const lastModified = currentDate.toLocaleString();
 
-// Get the last modified date
-const lastModified = document.lastModified;
-
-// Update the footer with the current year and last modified date
+// Update the footer with the last modified date
 document.getElementById("last-modified").textContent = lastModified;
 
-// Add event listener to the hamburger menu
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const navMenu = document.querySelector("nav ul");
 
-    hamburgerMenu.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-    });
-});
