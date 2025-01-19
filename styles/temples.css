@@ -14,10 +14,9 @@ header {
     text-align: center;
 }
 nav a:hover {
-    /* add styles here, e.g. */
     background-color: #555;
     color: #fff;
-    text-decoration: none;
+    text-decoration:none;
     }
     
 nav ul {
