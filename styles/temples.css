@@ -13,7 +13,11 @@ header {
     padding: 1em;
     text-align: center;
 }
-
+nav a:hover {
+    background-color: #555;
+    color: #fff;
+    }
+    
 nav ul {
     list-style: none;
     margin: 0;
@@ -64,8 +68,10 @@ footer {
     clear: both;
 }
 
-.gallery {
-    display: grid;
-    gap: 20px;
+/* Large screen styles */
+@media (min-width: 1024px) {
+    .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    }
     }
     
