@@ -72,9 +72,10 @@ footer {
 /* Large screen styles */
 @media (min-width: 1024px) {
     .gallery {
-        -webkit-grid-template-columns: repeat(3, 1fr);
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        }
+        gap: 2%;
+        }        
     }
         
     
