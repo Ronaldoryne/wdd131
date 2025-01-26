@@ -1,43 +1,62 @@
 :root {
-    --primary-color: #333;
-    --secondary-color: #666;
+--primary-color: #333;
+--secondary-color: #666;
+--font-family: 'Open Sans', sans-serif;
+}
+
+main {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2em;
+font-family: var(--font-family);
+}
+
+.container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 80%;
+}
+header {
+    text-align: center;
     }
     
-    main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
-    font-family: 'Open Sans', sans-serif;
+    header h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
     }
     
-    .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    }
-    
-    .Data {
-    flex-basis: 40%;
-    }
-    .Weather {
-        flex-basis: 40%;
-        text-align: center;
-        }
-        
-        .Weather img {
-        width: 50%;
-        height: auto;
-        margin: 0 auto;
-        }
-        
-        footer {
-        text-align: center;
-        }
-        
-        @media only screen and (max-width: 768px) {
-        .container {
-        flex-direction: column;
-        }
-    }  
+.Data {
+flex-basis: 40%;
+}
+
+.Weather {
+flex-basis: 40%;
+text-align: center;
+}
+
+.Weather img {
+width: 50%;
+height: auto;
+margin: 0 auto;
+}
+
+footer {
+text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+.container {
+flex-direction: column;
+}
+}
+
+::after {
+content: "";
+display: block;
+clear: both;
+}
+
