@@ -1,3 +1,4 @@
+//product.js
 const products = [
     {
       id: "fc-1888",

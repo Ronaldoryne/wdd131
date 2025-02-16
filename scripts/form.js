@@ -1,14 +1,24 @@
  // Get the current date and time
-const currentDate = new Date();
+ const currentDate = new Date();
 
-// Format the date and time
-const lastModified = currentDate.toLocaleString();
+ // Format the date and time
+ const options = { 
+     year: 'numeric', 
+     month: 'long', 
+     day: 'numeric',
+     hour: '2-digit',
+     minute: '2-digit',
+     second: '2-digit'
+ };
+ 
+ const lastModified = currentDate.toLocaleDateString('en-US', options);
 
-// Update the footer with the last modified date
-document.getElementById("last-modified").textContent = lastModified;
+ // Update the footer with the last modified date
+ const lastModifiedElement = document.getElementById('lastModified');
+ if (lastModifiedElement) {
+     lastModifiedElement.textContent = lastModified;
+ }
 
-
- // js/form.js
 document.addEventListener('DOMContentLoaded', function() {
     // Populate product select options
     const productSelect = document.getElementById('productName');

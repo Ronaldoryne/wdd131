@@ -1,12 +1,29 @@
-* css/styles.css */
+:root {
+    --primary-color: #2b7a2f;    /* Darker green for better contrast */
+    --primary-hover: #236024;    /* Even darker for hover state */
+    --text-color: #333;
+    --label-color: #222;
+    --border-color: #666;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
 
 h1 {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 30px;
+    font-size: 2rem;
 }
 
-/* Form Styles */
+/* Form Styles with improved contrast */
 form {
     background-color: white;
     padding: 25px;
@@ -22,7 +39,7 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #444;
+    color: var(--label-color);
 }
 
 select,
@@ -31,12 +48,12 @@ input[type="text"],
 textarea {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 16px;
 }
 
-/* Star Rating Styles */
+/* Star Rating Styles with better contrast */
 .star-rating {
     display: flex;
     flex-direction: row-reverse;
@@ -50,7 +67,7 @@ textarea {
 .star-rating label {
     cursor: pointer;
     font-size: 25px;
-    color: #ddd;
+    color: #999;  /* Darker color for empty stars */
     margin-right: 5px;
     transition: color 0.2s ease-in-out;
 }
@@ -58,33 +75,12 @@ textarea {
 .star-rating label:hover,
 .star-rating label:hover ~ label,
 .star-rating input:checked ~ label {
-    color: #ffd700;
+    color: #f4b400;  /* More visible gold color */
 }
 
-/* Checkbox Group Styles */
-.checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.checkbox-group div {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-group input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-.checkbox-group label {
-    display: inline;
-    font-weight: normal;
-}
-
-/* Submit Button Styles */
+/* Submit Button Styles with better contrast */
 .submit-btn {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     color: white;
     padding: 12px 24px;
     border: none;
@@ -96,39 +92,58 @@ textarea {
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: var(--primary-hover);
 }
 
-/* Footer Styles */
-footer {
-    margin-top: 40px;
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    border-top: 1px solid #ddd;
+/* Focus states for accessibility */
+select:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
-/* Review Page Specific Styles */
-.review-page {
-    text-align: center;
+/* Error states */
+.error {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: 4px;
 }
 
-#reviewCount {
-    font-weight: bold;
-    color: #4CAF50;
+.input-error {
+    border-color: #d32f2f;
+}
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-    
-    body {
-        padding: 10px;
-    }
-    
-    form {
-        padding: 15px;
-    }
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ddd;
+}
+
+.star-rating label:before {
+    content: '★';
+}
+
+.star-rating input:checked ~ label {
+    color: #ffd700;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffd700;
+}
+
+.star-rating:hover input:checked ~ label:not(:hover) {
+    color: #ddd;
 }
